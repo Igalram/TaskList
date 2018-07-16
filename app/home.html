@@ -1,19 +1,25 @@
 <div class="container">
     <div class="jumbotron">
         <h1 id="headerfirst"> Your Daily Task List</h1>
+
+
         <p>{{test}}</p>
     </div>
 
     <div class="jumbotron">
         <div class="container col-sm-4-centered">
 
+            <form ng-submit="setTask()">
+            <input type="text" placeholder="what's next?" ng-model="newTask" ng-model-options="{updateOn : 'change'}"></form>
 
-            <input type="text" placeholder="what's next?">
+            <div class="card" ng-repeat="task in tasks">
+                <div class="card-body">
+                    <div class="col10"><i ng-class="task.status ? 'far fa-square' : 'far fa-check-square'"></i></div>
+                    <div class="col80">{{task.text}}</div>
+                    <div class="col10">{{task.status}}</div>
 
-            <div class="card">
-                <div class="card-body">Basic card</div>
             </div>
-            <br>
+            
 
         </div>
     </div>
