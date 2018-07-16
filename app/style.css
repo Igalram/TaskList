@@ -2,14 +2,26 @@
     color: Darkblue;
     font-family: lobster;
     text-align: center;
-    font-size: 5rem;
+    font-size: 3rem;
 }
 
 body {
     background-color: darkblue;
+    font-size: 1.25em;
 }
 
 .jumbotron {
     margin-top: 2vh;
+    width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input {
+    height: 64px;
+    width: 100%;
+  
+    margin-bottom: 10px;
+    
 }
 
