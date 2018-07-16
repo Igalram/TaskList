@@ -1,0 +1,15 @@
+#headerfirst {
+    color: Darkblue;
+    font-family: lobster;
+    text-align: center;
+    font-size: 5rem;
+}
+
+body {
+    background-color: darkblue;
+}
+
+.jumbotron {
+    margin-top: 2vh;
+}
+
