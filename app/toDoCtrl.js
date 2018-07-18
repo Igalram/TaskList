@@ -8,6 +8,16 @@ app.controller('toDoCtrl', function ($scope, $http, $location, toDoSrv) {
     toDoSrv.setTask($scope.newTask);
   }
 
+  $scope.delTask = function (index) {
+    toDoSrv.delTask(index);
+    console.log("CTRL: delTask is called");
+  }
+
+  $scope.checkTask = function (index) {
+    toDoSrv.checkTask(index);
+    console.log("CTRL: checkTask is called");
+  }
+
   
     
 

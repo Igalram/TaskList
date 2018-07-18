@@ -40,11 +40,21 @@ app.factory('toDoSrv', function($http, $log, $q) {
 
   }
 
+  function delTask (index) {
+    tasks.splice(index, 1);
+  }
+
+
+  function checkTask (index) {
+    tasks[index].status = true; 
+  }
 
     return {
 
         getTaskList : getTaskList,
-        setTask : setTask
+        setTask : setTask,
+        delTask : delTask,
+        checkTask : checkTask
 
     }
 
