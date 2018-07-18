@@ -13,10 +13,11 @@
             <input type="text" placeholder="what's next?" ng-model="newTask" ng-model-options="{updateOn : 'change'}"></form>
 
             <div class="card" ng-repeat="task in tasks">
-                <div class="card-body">
-                    <div class="col10"><i ng-class="task.status ? 'far fa-square' : 'far fa-check-square'"></i></div>
-                    <div class="col80">{{task.text}}</div>
-                    <div class="col10">{{task.status}}</div>
+                <div class="card-body" ng-mouseenter="mouseOver=true" ng-mouseleave="mouseOver=false">
+                    <div class="col10"><i ng-class="task.status ? 'far fa-check-square done' : 'far fa-square'" ng-click="checkTask()"></i></div>
+                    <div class="col80"><p ng-class="task.status ? 'done' : 'active'">{{task.text}}</p></div>
+
+                    <div class="col10"> <i ng-hide="(mouseOver==false)||(task.status==true)" ng-click="delTask()" class="fas fa-times"></i></div>
 
             </div>
             

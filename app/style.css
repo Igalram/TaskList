@@ -39,8 +39,15 @@ input {
     margin: 0px;
 }
 
-.done:first-child {
+.done  {
+    color: lightgray;
+    text-decoration-style: line-through;
+
     
+}
+
+.active {
+    color: darkblue;
 }
 
 
