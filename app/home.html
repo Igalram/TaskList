@@ -13,7 +13,7 @@
                 <input type="text" placeholder="Add task" ng-model="newTask" ng-model-options="{updateOn : 'change'}">
             </form>
 
-            <div class="card" ng-repeat="task in tasks">
+            <div class="card" ng-repeat="task in tasks | filter: currentFilter ">
                 <div class="card-body" ng-mouseenter="mouseOver=true" ng-mouseleave="mouseOver=false">
                     <div class="col10">
                         <i ng-class="task.status ? 'far fa-check-square done' : 'far fa-square'" ng-click="checkTask($index)"></i>
@@ -28,16 +28,17 @@
 
                 </div>
             </div>
-            <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                <label class="btn btn-primary active">
+            <div class="btn-group btn-group-toggle d-flex" data-toggle="buttons" >
+                <label class="btn btn-primary active" ng-click="setFilterBy('')">
                     <input type="radio" name="options" id="option1" autocomplete="off" checked> All
                 </label>
-                <label class="btn btn-primary">
-                    <input type="radio" name="options" id="option2" autocomplete="off"> Resolved
+                <label class="btn btn-primary" ng-click="setFilterBy('true')">
+                    <input type="radio" name="options" id="option2"  autocomplete="off"> Resolved
                 </label>
-                <label class="btn btn-primary">
-                    <input type="radio" name="options" id="option3" autocomplete="off"> Unresolved
+                <label class="btn btn-primary" ng-click="setFilterBy('false')">
+                    <input type="radio" name="options" id="option3"  autocomplete="off"> Unresolved
                 </label>
+                <p class="ml-auto" id="counter"> Active: {{numActive()}}</p>
             </div>
         
 
